@@ -15,14 +15,19 @@
 //= require_tree .
 
 
+// var boatArr = []
+// var job = 0
 
-// var boat = 0
-// var boatTwo = 0
-// var boatThree = 0
-// var boatFour = 0
-// var boatArr = [boat, boatTwo, boatThree, boatFour]
 
-// var job = 56
+// function addBoat(boat){
+//   boatArr.push(boat)
+//   return boatArr
+// }
+
+// function delivered(arr) {
+//   arr.length = 0
+//   console.log(arr)
+// }
 
 // function ship(job, boatArr) {
 //   let i = 0
@@ -37,12 +42,9 @@
 //         i++
 //       } else {
 //       boatArr[i] += 1
-//       job -= 1
+//       jobNow = job -= 1
 //       }
 //     }
 //   })  
-//   return "remaining containers: " + job + " " + "boat inventory: " + boatArr
+//   return "Containers remaining: " + jobNow + " " + "Boat inventory: " + boatArr
 // }
-
-
-// use params from html for values in JS
