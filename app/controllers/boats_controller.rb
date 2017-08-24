@@ -8,8 +8,12 @@ class BoatsController < ApplicationController
 	end
 
 	def create
-		boat = Boat.find_or_create_by(boat_params)
-		redirect_to boat_path(boat)
+		@boat = Boat.new(boat_params)
+		if @boat.save
+			redirect_to boat_path(boat)
+		else
+			render :new
+		end
 	end
 
 	def edit
