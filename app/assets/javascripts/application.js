@@ -13,3 +13,36 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+// var boat = 0
+// var boatTwo = 0
+// var boatThree = 0
+// var boatFour = 0
+// var boatArr = [boat, boatTwo, boatThree, boatFour]
+
+// var job = 56
+
+// function ship(job, boatArr) {
+//   let i = 0
+//  boatArr.forEach(function(el) {
+//     while (job > 0) {
+//       if (boatArr[boatArr.length -1] === 10){
+//         break;
+//       }
+//       if (job === 0){
+//         break;
+//       } else if (boatArr[i] === 10){
+//         i++
+//       } else {
+//       boatArr[i] += 1
+//       job -= 1
+//       }
+//     }
+//   })  
+//   return "remaining containers: " + job + " " + "boat inventory: " + boatArr
+// }
+
+
+// use params from html for values in JS
