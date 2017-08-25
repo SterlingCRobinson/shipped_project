@@ -1,11 +1,17 @@
 class BoatsController < ApplicationController
 
 	def index
-		@boats = Boat.find_by_id(params[:id])
+		@boats = current_user.boats.all
+		@boat = Boat.find_by_id(params[:id])
+	end
+
+	def show
+		redirect_to boats_path(boats)
 	end
 
 	def create
-		@boat = Boat.new(boat_params)
+		@boat = current_user.boats.new(boat_params)
+		binding.pry
 		if @boat.save
 			redirect_to @boat, notice: "Boat successfully created" 
 		else
