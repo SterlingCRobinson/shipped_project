@@ -9,24 +9,19 @@
 				</ul>
 			</div>
 		<% end %>
+		<%= f.hidden_field :user_id, value: current_user %>
 		<p>
 			<%= f.label :name %><br>
 			<%= f.text_field :name %>
 		</p>
 
 		<p>
-			<%= f.label :origin %><br>
-			<%= f.text_field :origin %>
+			<%= f.label :loc %><br>
+			<%= f.text_field :loc %>
 		</p>
 
 		<p>
-			<%= f.label :destination %><br>
-			<%= f.text_field :destination %>
-		</p>
-
-		<p>
-			<%= f.label :containers %><br>
-			<%= f.text_field :containers %>
+			<%= f.hidden_field :containers, value: 10 %>
 		</p>
 
 		<p>

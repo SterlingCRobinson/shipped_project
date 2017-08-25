@@ -1,6 +1,5 @@
-<% @posts.each do |job| %>
-				<div class="front-page-posts">
-					<h3> <%= post.title %> </h3>
+<% @jobs.each do |job| %>
+				<div class="jobs-list">
 					<a href="/users/<%= job.user.id %>"> <%= job.user.name %> </a>
 					<hr>
 					<p><%= job.name %></p>

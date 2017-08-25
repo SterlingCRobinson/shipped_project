@@ -1,0 +1,15 @@
+show.html.erb
+
+<% @boats.each do |boat| %>
+				<div class="show-boats">
+					<a href="/users/<%= boat.user.id %>"> <%= boat.user.name %> </a>
+					<hr>
+					<p><%= boat.name %></p>
+					<br>
+					<p><%= boat.loc %></p>
+					<br>
+					<p><%= boat.containers %></p>
+					<br>
+					<a href="/posts/<%= job.id %>"> View </a>
+				</div>
+		<% end %>
