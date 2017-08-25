@@ -1,1 +1,36 @@
-_form.html.erb
+<%= form_for @boat do |f| %>
+		<% if @boat.errors.any? %>
+			<div id="errors">
+				<h2><%= pluralize(@boat.errors.count, "error") %> prevented this boat from saving</h2>
+				<ul>
+					<% @boat.errors.full_messages.each do |msg| %>
+						<li><% msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		<p>
+			<%= f.label :name %><br>
+			<%= f.text_field :name %>
+		</p>
+
+		<p>
+			<%= f.label :origin %><br>
+			<%= f.text_field :origin %>
+		</p>
+
+		<p>
+			<%= f.label :destination %><br>
+			<%= f.text_field :destination %>
+		</p>
+
+		<p>
+			<%= f.label :containers %><br>
+			<%= f.text_field :containers %>
+		</p>
+
+		<p>
+			<%= f.submit %>
+		</p>
+
+	<% end %>
