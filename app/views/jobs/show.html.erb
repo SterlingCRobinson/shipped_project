@@ -1,1 +1,32 @@
+<<<<<<< HEAD
 <h1>Show#Jobs</h1>
+=======
+<div class="jobs-list">
+	<p>From: <%= @job.origin %> to <%= @job.destination %></p>
+	<br>
+	<p>Description: 
+	<br>
+	<br>
+	<%= @job.description %></p>
+	<br>
+	<p>Amount to ship: <%= @job.containers %></p>
+	<br>
+	<p>$<%= @job.cost %></p>
+	<br>
+</div>
+
+<div class="add-boats">
+	<% @boats.each do |boat| %>
+				<div class="show-boats">
+					<a href="/users/<%= boat.user.id %>"> <%= boat.user.name %> </a>
+					<hr>
+					<p><%= boat.name %></p>
+					<br>
+					<p><%= boat.loc %></p>
+					<br>
+					<p><%= boat.containers %></p>
+					<br>
+				</div>
+		<% end %>
+</div>
+>>>>>>> master

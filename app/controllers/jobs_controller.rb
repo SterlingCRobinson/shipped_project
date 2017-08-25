@@ -5,6 +5,8 @@ class JobsController < ApplicationController
 	end
 
 	def show
+		@job = Job.find_by_id(params[:id])
+		@boats = Boat.find_by_id(params[:id])
 	end
 
 	def create

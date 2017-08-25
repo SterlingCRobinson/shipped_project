@@ -1,20 +1,17 @@
-<% @posts.each do |job| %>
-				<div class="front-page-posts">
-					<h3> <%= post.title %> </h3>
-					<a href="/users/<%= job.user.id %>"> <%= job.user.name %> </a>
+<% @jobs.each do |job| %>
+				<div class="jobs-list">
 					<hr>
-					<p><%= job.name %></p>
+					<p>From: <%= job.origin %> to <%= job.destination %></p>
 					<br>
-					<p><%= job.containers %></p>
+					<p>Description: 
 					<br>
-					<p><%= job.cost %></p>
 					<br>
-					<p><%= job.description %></p>
+					<%= job.description %></p>
 					<br>
-					<p><%= job.origin %></p>
+					<p>Amount to ship: <%= job.containers %></p>
 					<br>
-					<p><%= job.destination %></p>
+					<p>$<%= job.cost %></p>
 					<br>
-					<a href="/posts/<%= job.id %>"> View </a>
+					<a href="/jobs/<%= job.id %>"> View </a>
 				</div>
 		<% end %>

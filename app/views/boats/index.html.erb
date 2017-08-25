@@ -1,0 +1,11 @@
+<% @boats.each do |boat| %>
+		<div class="show-boats">
+			<p>Boat name: <%= boat.name %></p>
+			<br>
+			<p>Located: <%= boat.loc %></p>
+			<br>
+			<p>Currently holding <%= boat.containers %> containers.</p>
+			<br>
+			<a href="/boats/<%= boat.id %>"> View </a>
+		</div>
+<% end %>
