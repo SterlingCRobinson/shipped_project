@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 	def create
 	 	@user = User.new(user_params)
 		if @boat.save
-			redirect_to user_path(user), notice: "User successfully created" 
+			redirect_to user_path(user), notice: "User successfully created"
 		else
 			render :new
 		end
