@@ -2,11 +2,12 @@ class JobsController < ApplicationController
 
 	def index
 		@job = Job.all
+
 	end
 
 	def show
 		@job = Job.find_by_id(params[:id])
-		@boats = Boat.find_by_id(params[:id])
+		@boats = current_user.boats.all
 	end
 
 	def create

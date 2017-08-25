@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 <h1>Show#Jobs</h1>
-=======
+
 <div class="jobs-list">
 	<p>From: <%= @job.origin %> to <%= @job.destination %></p>
 	<br>
@@ -9,24 +8,30 @@
 	<br>
 	<%= @job.description %></p>
 	<br>
-	<p>Amount to ship: <%= @job.containers %></p>
+	<p>Amount to ship: <span id="j_con"><%= @job.containers %></span></p>
 	<br>
 	<p>$<%= @job.cost %></p>
 	<br>
 </div>
-
+<br>
+<br>
+<hr>
 <div class="add-boats">
 	<% @boats.each do |boat| %>
 				<div class="show-boats">
-					<a href="/users/<%= boat.user.id %>"> <%= boat.user.name %> </a>
-					<hr>
+					<img src="<%= boat.avatar %>" alt="">
+					<br>
 					<p><%= boat.name %></p>
 					<br>
 					<p><%= boat.loc %></p>
 					<br>
-					<p><%= boat.containers %></p>
+					<p><span class="b_con"><%= boat.containers %></span></p>
 					<br>
+					<button id="add_btn" onclick="addBoat(boat.containers)">Add Boat</button>
 				</div>
 		<% end %>
 </div>
->>>>>>> master
+
+<div id="boatArr">
+	
+</div>

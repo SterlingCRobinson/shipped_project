@@ -13,15 +13,17 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
-
+// var job = document.querySelector("#j_con")
+// var boat = document.querySelector("#b_con")
+// var add = document.querySelector("#add_btn")
+// var ba = document.querySelector("#boatArr")
 
 // var boatArr = []
-// var job = 0
 
 
 // function addBoat(boat){
 //   boatArr.push(boat)
-//   return boatArr
+//   ba.innerText = `${boatArr}`
 // }
 
 // function delivered(arr) {
@@ -31,9 +33,11 @@
 
 // function ship(job, boatArr) {
 //   let i = 0
+//   var full = false
 //  boatArr.forEach(function(el) {
 //     while (job > 0) {
 //       if (boatArr[boatArr.length -1] === 10){
+//         full = true
 //         break;
 //       }
 //       if (job === 0){
@@ -46,5 +50,8 @@
 //       }
 //     }
 //   })  
+//   if (!full) boatArr[i] = add.addEventListener("click", function(e) {
+//       	e.target.disabled = "true";
+//       }
 //   return "Containers remaining: " + jobNow + " " + "Boat inventory: " + boatArr
 // }
