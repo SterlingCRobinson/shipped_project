@@ -21,13 +21,12 @@ class JobsController < ApplicationController
 	end
 
 	def edit
+		@job = Job.find_by_id(params[:id])
 	end
 
 	def update
 		if @job.update(job_params)
-			redirect_to @job, notice: "Job successfully updated"
-		else
-			render :edit
+			@job.update(job_params)
 		end
 	end
 
