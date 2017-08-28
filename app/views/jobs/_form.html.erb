@@ -1,4 +1,4 @@
-<%= form_for @job do |f| %>
+<%= simple_form_for @job do |f| %>
 		<% if @job.errors.any? %>
 			<div id="errors">
 				<h2><%= pluralize(@job.errors.count, "error") %> prevented this job from saving</h2>
@@ -9,34 +9,52 @@
 				</ul>
 			</div>
 		<% end %>
-		<p>
-			<%= f.label :origin %><br>
-			<%= f.text_field :origin %>
-		</p>
 
-		<p>
-			<%= f.label :destination %><br>
-			<%= f.text_field :destination %>
-		</p>
+<legend>Create a job...</legend>
+	<div class="form-group">
+		<div class="col-md-8 control-label">
+			<div class="col-md-4">
+			<%= f.input :origin, as: :radio_buttons, collection: ["Port of Los Angeles", "Port of Long Beach", "Port of New York and New Jersey", "Georgia Ports", "Port of Seattle-Tacoma", "Port of Virginia", "Port of Houston", "South Carolina ports", "Port of Oakland", "Port of Miami"] %>
+			</div>
+		</div>
+  	
+  		<div class="col-md-8 control-label">
+  			<div class="col-md-4">
+  			<%= f.input :destination, as: :radio_buttons, collection: ["Port of Los Angeles", "Port of Long Beach", "Port of New York and New Jersey", "Georgia Ports", "Port of Seattle-Tacoma", "Port of Virginia", "Port of Houston", "South Carolina ports", "Port of Oakland", "Port of Miami"] %>
+  			</div>
+  		</div>
 
-		<p>
-			<%= f.label :description %><br>
-			<%= f.text_area :description %>
-		</p>
+  		<div class="col-md-8 control-label">
+  			<div class="col-md-4">
+  			<%= f.label :description %><br>
+  			<%= f.text_area :description %>
+  			</div>
+  		</div>
 
-		<p>
+
+		<div class="col-md-8 control-label">
+			<div class="col-md-4">
 			<%= f.label :containers %><br>
 			<%= f.text_field :containers %>
-		</p>
-
-		<p>
+			</div>
+		</div>
+	
+		<div class="col-md-8 control-label">
+			<div class="col-md-4">	
 			<%= f.label :cost %><br>
 			<%= f.text_field :cost %>
-		</p>
+			</div>
+		</div>
 
+		<br><br>
 
-		<p>
+		<div class="col-md-8 control-label">
+			<div class="col-md-4">
 			<%= f.submit %>
-		</p>
+			</div>
+		</div>
 
-	<% end %>
+	</div>
+
+  <% end %>
+

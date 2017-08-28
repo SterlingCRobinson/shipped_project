@@ -1,13 +1,58 @@
+
 <%= form_for @boat do |f| %>
-		<% if @boat.errors.any? %>
-			<div id="errors">
-				<h2><%= pluralize(@boat.errors.count, "error") %> prevented this boat from saving</h2>
-				<ul>
-					<% @boat.errors.full_messages.each do |msg| %>
-						<li><% msg %></li>
-					<% end %>
-				</ul>
+	<% if @boat.errors.any? %>
+		<div id="errors">
+			<h2><%= pluralize(@boat.errors.count, "error") %> prevented this boat from saving</h2>
+			<ul>
+				<% @boat.errors.full_messages.each do |msg| %>
+					<li><% msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+<legend>Add a boat...</legend>
+
+
+<div class="form-group">
+		<div class="col-md-8 control-label">
+			<div class="col-md-4">
+			<%= f.input :origin, as: :radio_buttons, collection: ["Port of Los Angeles", "Port of Long Beach", "Port of New York and New Jersey", "Georgia Ports", "Port of Seattle-Tacoma", "Port of Virginia", "Port of Houston", "South Carolina ports", "Port of Oakland", "Port of Miami"] %>
 			</div>
+		</div>
+  	
+  		<div class="col-md-8 control-label">
+  			<div class="col-md-4">
+  			<%= f.input :destination, as: :radio_buttons, collection: ["Port of Los Angeles", "Port of Long Beach", "Port of New York and New Jersey", "Georgia Ports", "Port of Seattle-Tacoma", "Port of Virginia", "Port of Houston", "South Carolina ports", "Port of Oakland", "Port of Miami"] %>
+  			</div>
+  		</div>
+
+  		<div class="col-md-8 control-label">
+  			<div class="col-md-4">
+  			<%= f.label :description %><br>
+  			<%= f.text_area :description %>
+  			</div>
+  		</div>
+
+
+		<div class="col-md-8 control-label">
+			<div class="col-md-4">
+			<%= f.label :containers %><br>
+			<%= f.text_field :containers %>
+			</div>
+		</div>
+	
+		<div class="col-md-8 control-label">
+			<div class="col-md-4">	
+			<%= f.label :cost %><br>
+			<%= f.text_field :cost %>
+			</div>
+		</div>
+
+		<br><br>
+
+		<div class="col-md-8 control-label">
+			<div class="col-md-4">
 		<% end %>
 		<p>
 			<%= f.file_field :avatar %>
@@ -28,6 +73,82 @@
 
 		<p>
 			<%= f.submit %>
-		</p>
+			</div>
+		</div>
 
-	<% end %>
+	</div>
+
+  <% end %>
+
+	<p>
+		<%= f.file_field :avatar %>
+	</p>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :loc %><br>
+		<%= f.text_field :loc %>
+	</p>
+
+	<p>
+		<%= f.hidden_field :containers, value: 0 %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>
+
+<!--
+<%= f.label :phone_number, "Phone Number" %>
+<label for="my_model_phone_number">Phone Number</label>
+-->
+
+		<!-- Form Name -->
+<legend>Add a boat...</legend>
+
+<!-- Description -->
+<div class="form-group">
+  <label class="col-md-4 control-label">Name of Boat:</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="boat"></textarea>
+  </div>
+</div>
+
+<!-- Origin -->
+<div class="form-group">
+  <label class="col-md-4 control-label">Origin:</label>
+  <div class="col-md-4">
+    <select id="origin" class="form-control">
+      <option value="1">Port of Los Angeles</option>
+      <option value="2">Port of Long Beach</option>
+      <option value="3">Port of New York and New Jersey</option>
+      <option value="4">Georgia Ports</option>
+      <option value="5">Port of Seattle-Tacoma</option>
+      <option value="6">Port of Virginia</option>
+      <option value="7">Port of Houston</option>
+      <option value="8">South Carolina ports</option>
+      <option value="9">Port of Oakland</option>
+      <option value="10">Port of Miami</option>
+    </select>
+  </div>
+</div>
+
+<!-- Containers -->
+<div class="form-group">
+  <label class="col-md-4 control-label">Containers</label>
+  <div class="col-md-4">                     
+    <input type="text" class="form-control" id="containers"></input>
+  </div>
+</div>
+
+<!-- Submit -->
+<div class="form-group">
+	<div class="col-md-12 text-right">
+		<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+</div>
