@@ -1,5 +1,4 @@
 class BoatsController < ApplicationController
-end
 
 	def index
 		@boats = current_user.boats.all
