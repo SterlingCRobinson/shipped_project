@@ -6,7 +6,7 @@ class BoatsController < ApplicationController
 	end
 
 	def show
-		redirect_to boats_path(boats)
+		redirect_to "/boats"
 	end
 
 	def create
