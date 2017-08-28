@@ -32,7 +32,9 @@
 					<br>
 				<%= form_for @job do |f| %>
 					<%= f.hidden_field :boat_id, value: boat.id %>
-					<span id="add_btn"><%= button_to "Add boat", @job, method: :put, data: { confirm: "Ya sure?"} %></span>
+					<span id="add_btn">
+						<%= button_to "Add boat", @job, method: :put, remote: true, data: { confirm: "Are you sure?"} %>
+					</span>
 				<% end %>
 				</div>
 		<% end %>

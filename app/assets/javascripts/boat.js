@@ -27,12 +27,6 @@ function jobsPage(){
 	  console.log(boatArr)
 	}
 
-	var del = document.querySelector("#deli")
-
-	del.addEventListener("click", function(){
-		delivered(boatArr)
-	})
-
 	var shipIt = document.querySelector("#ship")
 
 	function ship(job, boatArr) {
