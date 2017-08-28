@@ -12,8 +12,10 @@
 	<br>
 	<p>$<%= @job.cost %></p>
 	<br>
-	<button onclick="ship()">Ship</button>
+	<p><%= @job.boat_id %></p>
+	<button id="ship">Ship</button>
 </div>
+<div id="boatArr"></div>
 <br>
 <br>
 <hr>
@@ -22,17 +24,16 @@
 				<div class="show-boats">
 					<img src="<%= boat.avatar %>" alt="">
 					<br>
-					<p><%= boat.name %></p>
+					<p id="b_name"><%= boat.name %></p>
 					<br>
 					<p><%= boat.loc %></p>
 					<br>
-					<p><span class="b_con"><%= boat.containers %></span></p>
+					<p><span id="b_con"><%= boat.containers %></span></p>
 					<br>
-					<button id="add_btn" onclick="addBoat(0)">Add Boat</button>
+				<%= form_for @job do |f| %>
+					<%= f.hidden_field :boat_id, value: boat.id %>
+					<span id="add_btn"><%= button_to "Add boat", @job, method: :put, data: { confirm: "Ya sure?"} %></span>
+				<% end %>
 				</div>
 		<% end %>
-</div>
-
-<div id="boatArr">
-	
 </div>

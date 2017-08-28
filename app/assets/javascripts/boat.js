@@ -1,23 +1,39 @@
 function jobsPage(){
 
-	var getJob = document.querySelector("#j_con").innerHTML
+	j = document.querySelector("#j_con")
+	b = document.querySelector("#b_con")
+	var getJob = j.innerHTML
 	job = parseInt(getJob, 10)
-	var getBoat = document.querySelector("#b_con").innerHTML
+	var getBoat = b.innerHTML
 	boat = parseInt(getBoat, 10)
+	var getName = document.querySelector("#b_name").innerHTML
 	var add = document.querySelector("#add_btn")
 	var ba = document.querySelector("#boatArr")
 	var boatArr = []
+	var boatName = []
 
-
-	add.addEventListener("click", function(boat){
+	add.addEventListener("click", function(e){
 	  boatArr.push(boat)
-	  console.log(boatArr)
-	})
-
+	  boatName.push(getName)
+	//   if (boat === 10) {
+	//   	add.addEventListener("click", function(e) {
+ //      e.target.disabled = "true";
+	//   })
+	// }
+		ba.innerHTML = boatName
+})
 	function delivered(boatArr) {
 	  boatArr.length = 0
 	  console.log(boatArr)
 	}
+
+	var del = document.querySelector("#deli")
+
+	del.addEventListener("click", function(){
+		delivered(boatArr)
+	})
+
+	var shipIt = document.querySelector("#ship")
 
 	function ship(job, boatArr) {
 	  let i = 0
@@ -26,6 +42,8 @@ function jobsPage(){
 	    while (job > 0) {
 	      if (boatArr[boatArr.length -1] === 10){
 	        full = true
+	        add.disabled = "true";
+	        b.innerHTML = "Full"
 	        break;
 	      }
 	      if (job === 0){
@@ -35,12 +53,21 @@ function jobsPage(){
 	      } else {
 	      boatArr[i] += 1
 	      jobNow = job -= 1
+	      boat = boatArr[i]
+	      b.innerHTML = boat
 	      }
 	    }
 	  })  
-	  console.log(boatArr, jobNow)
+	  console.log(boatArr, jobNow, boat)
+	  j.innerHTML = jobNow
+	  if (job === 0){
+	  	j.innerHTML = "Complete!"
+	  }
 	}
-	getJob.innerHTML = job
+
+	shipIt.addEventListener("click", function(){
+		ship(job, boatArr)
+	})
 }
 
 document.addEventListener("turbolinks:load", function(){
