@@ -1,4 +1,5 @@
 class BoatsController < ApplicationController
+end
 
 	def index
 		@boats = current_user.boats.all
@@ -13,7 +14,7 @@ class BoatsController < ApplicationController
 		@boat = current_user.boats.new(boat_params)
 		binding.pry
 		if @boat.save
-			redirect_to @boat, notice: "Boat successfully created" 
+			redirect_to @boat, notice: "Boat successfully created"
 		else
 			render :new
 		end
