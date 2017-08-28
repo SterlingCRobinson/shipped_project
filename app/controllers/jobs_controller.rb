@@ -28,6 +28,7 @@ class JobsController < ApplicationController
 	end
 
 	def update
+		@job = Job.find_by_id(params[:id])
 		if @job.update(job_params)
 			@job.update(job_params)
 		end
@@ -41,7 +42,7 @@ class JobsController < ApplicationController
 	private
 
 	def job_params
-		params.require(:job).permit(:id, :name, :containers, :cost, :description, :origin, :destination)
+		params.require(:job).permit(:id, :boat_id, :name, :containers, :cost, :description, :origin, :destination)
 	end
 
 end
