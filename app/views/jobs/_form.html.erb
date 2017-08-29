@@ -10,8 +10,15 @@
 			</div>
 		<% end %>
 
-<legend>Create a job...</legend>
+<legend>Create/Edit a job...</legend>
 	<div class="form-group">
+		<div class="col-md-8 control-label">
+			<div class="col-md-4">
+				<%= f.label :name %><br>
+				<%= f.text_field :name %>
+			</div>
+		</div>
+
 		<div class="col-md-8 control-label">
 			<div class="col-md-4">
 			<%= f.input :origin, as: :radio_buttons, collection: ["Port of Los Angeles", "Port of Long Beach", "Port of New York and New Jersey", "Georgia Ports", "Port of Seattle-Tacoma", "Port of Virginia", "Port of Houston", "South Carolina ports", "Port of Oakland", "Port of Miami"] %>
@@ -34,21 +41,21 @@
 
 		<div class="col-md-8 control-label">
 			<div class="col-md-4">
-			<%= f.label :containers %><br>
-			<%= f.text_field :containers %>
+				<%= f.label :containers %><br>
+				<%= f.text_field :containers %>
 			</div>
 		</div>
 	
 		<div class="col-md-8 control-label">
 			<div class="col-md-4">	
-			<%= f.label :cost %><br>
-			<%= f.text_field :cost %>
+				<%= f.label :cost %><br>
+				<%= f.text_field :cost %>
 			</div>
 		</div>
 
 		<div class="col-md-8 control-label">
 			<div class="col-md-4">
-			<%= f.submit %>
+				<%= f.submit %>
 			</div>
 		</div>
 
