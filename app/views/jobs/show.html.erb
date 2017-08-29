@@ -12,11 +12,9 @@
 	<br>
 	<p>$<%= @job.cost %></p>
 	<br>
-	<p><%= @job.boat_id %></p>
-	<button id="ship">Ship</button>
+	<p id="boatArr">Working boats: #<%= @job.boat_id %></p>
 </div>
 <br>
-<div id="boatArr"></div>
 <br>
 <a href="/jobs/<%= @job.id %>/edit"> Edit </a>
 <br>
@@ -24,9 +22,11 @@
 <div class="add-boats">
 	<% @boats.each do |boat| %>
 				<div class="show-boats">
-					<img src="<%= boat.avatar %>" alt="">
+					<img src="<%= boat.avatar %>" alt="" width="200">
 					<br>
 					<p id="b_name"><%= boat.name %></p>
+					<br>
+					<p>Boat Number: <%= boat.id%></p>
 					<br>
 					<p><%= boat.loc %></p>
 					<br>
