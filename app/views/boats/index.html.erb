@@ -1,3 +1,5 @@
+<%= link_to "Add a new boat", "/boats/new" %>
+
 <% @boats.each do |boat| %>
 		<div class="show-boats">
 			<img src="<%= boat.avatar %>" alt="" width="200px">
@@ -7,5 +9,6 @@
 			<br>
 			<p>Currently holding <%= boat.containers %> containers.</p>
 			<br>
+			<a href="/boats/<%= boat.id %>/edit"> Edit </a>
 		</div>
 <% end %>
