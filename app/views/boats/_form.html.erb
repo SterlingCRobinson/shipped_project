@@ -12,27 +12,29 @@
 
 	<legend>Add/Edit a boat...</legend>
 
+		<div class="wrapper">
+			<div class="form-group">
 				<%= f.file_field :avatar %><br>
-
-
+			</div>
+			
+			<div class="form-group">
 				<%= f.label :name %><br>
 				<%= f.text_field :name %>
-
-
+			</div>
 			
-
-				<%= f.input :loc, as: :radio_buttons, collection: ["Port of Los Angeles", "Port of Long Beach", "Port of New York and New Jersey", "Georgia Ports", "Port of Seattle-Tacoma", "Port of Virginia", "Port of Houston", "South Carolina ports", "Port of Oakland", "Port of Miami"]  %><br>
-				
-
-
+			<div class="form-group">
+				<%= f.input :loc, as: :select, collection: ["Por Los Angeles", "Port of Long Beach", "Port of New York and New Jersey", "Georgia Ports", "Port of Seattle-Tacoma", "Port of Virginia", "Port of Houston", "South Carolina ports", "Port of Oakland", "Port of Miami"]  %><br>
+			</div>		
 			
-
+			<div class="form-group">
 				<%= f.hidden_field :containers, value: 0 %>
+			</div>
+			
+			<div class="form-group">
+				<%= f.submit "save item", :class => 'submitty'%>
+			</div>
+		</div>
 
-
-				<%= f.submit %>
-
-
-<% end %>
+			<% end %>
 
 

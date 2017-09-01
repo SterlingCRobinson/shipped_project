@@ -1,5 +1,10 @@
 body{
-	background-color: #333;
+	background-color: #ccc;
+}
+
+.nav {
+	background-color: #fff;
+	border: 5px solid black;
 }
 
 .nav button {
@@ -8,6 +13,11 @@ body{
 	border: 1px solid black;
 	padding: .5em 1.5em;
 	border-radius: 1.5em;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
 }
 
 a:link :visited {
@@ -25,6 +35,8 @@ a {
 	width: 100%;
 	max-width: 540px;
 	padding: 10px;
+	border-radius: 10px;
+	border: 5px solid black;
 }
 
 .submitty {
@@ -104,4 +116,8 @@ a {
     background: #444;
     z-index: 30;
     padding: 10px;
+}
+
+strong {
+	text-decoration: underline;
 }
