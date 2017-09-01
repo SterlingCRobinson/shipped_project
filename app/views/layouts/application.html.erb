@@ -5,25 +5,26 @@
 	<%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   </head>
 
   <body>
-  	<%= link_to "Home", "/" %>
+  <div class="nav">
+  	<div>
+  	<button><%= link_to "Home", "/" %></button>
   	<% if current_user %>
-  		<%= link_to "My boats", "/boats" %>
-  		<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  		<button><%= link_to "My boats", "/boats" %></button>
+  		<button><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
   	<% else %>
-	  	<%= link_to "Log in", new_user_session_path %>
-	  	<%= link_to "Sign up", new_user_registration_path %>
+	  	<button><%= link_to "Log in", new_user_session_path %></button>
+	  	<button><%= link_to "Sign up", new_user_registration_path %></button>
 	  <% end %>
+	</div>
+  </div>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  	
   </body>
 </html>

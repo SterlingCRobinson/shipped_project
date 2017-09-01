@@ -1,21 +1,31 @@
 <%= link_to "Add a new job", "/jobs/new" %>
-
-<% @jobs.each do |job| %>
-				<div class="jobs-list">
-					<hr>
-					<p>From: <%= job.origin %> to <%= job.destination %></p>
-					<br>
-					<p>Description: 
-					<br>
-					<br>
-					<%= job.description %></p>
-					<br>
-					<p>Amount to ship: <%= job.containers %></p>
-					<br>
-					<p>Working boats: #<%= job.boat_id %></p>
-					<br>
-					<p>$<%= job.cost %></p>
-					<br>
-					<a href="/jobs/<%= job.id %>"> View </a>
-				</div>
+<div class="wrapper fit_inside">
+	<table class="table">
+		<thead>
+			<tr>
+			<th>From: </th>
+			<th>To: </th>
+			<th>Description: </th>
+			<th>Amount to ship: </th>
+			<th>Working boats: </th>
+			<th>Cost:</th>
+			<th> </th>
+		    </tr>
+		</thead>
+		<tbody>
+		<% @jobs.each do |job| %>
+		<tr>
+			<td><%= job.origin %> </td>
+			<td><%= job.destination %></td>
+			<td>
+				<p class="hover-description" data-description="<%= job.description %>"><%= job.description %></p>
+			</td>
+			<td><%= job.containers %></td>
+			<td>#<%= job.boat_id %></td>
+			<td>$<%= job.cost %></td>
+			<td><a href="/jobs/<%= job.id %>"> View </a></td>
+		</tr>
 		<% end %>
+		</tbody>
+	</table>
+</div>
