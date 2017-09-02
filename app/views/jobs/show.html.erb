@@ -1,44 +1,57 @@
-<div class="jobs-list">
-	<p><%= @job.name %></p>
-	<br>
-	<p>From: <%= @job.origin %> to <%= @job.destination %></p>
-	<br>
-	<p>Description: 
-	<br>
-	<br>
-	<%= @job.description %></p>
-	<br>
-	<p>Amount to ship: <span id="j_con"><%= @job.containers %></span></p>
-	<br>
-	<p>$<%= @job.cost %></p>
-	<br>
-	<p id="boatArr">Working boats: #<%= @job.boat_id %></p>
-</div>
-<br>
-<br>
-<a href="/jobs/<%= @job.id %>/edit"> Edit </a>
-<br>
-<hr>
-<div class="add-boats">
+<div class="wrapper fit_inside">
+	<table class="table">
+	<thead>
+		<tr>
+			<th>Job Name:</th>
+			<th>From:</th>
+			<th>To:</th>
+			<th>Description:</th>
+			<th>Containers:</th>
+			<th>Cost</th>
+			<th>Working Boats:</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
 	<% @boats.each do |boat| %>
-				<div class="show-boats">
-					<img src="<%= boat.avatar %>" alt="" width="200">
+		<tr>
+			<td><%= @job.name %></td>
+			<td><%= @job.origin %></td>
+			<td><%= @job.destination %></td>
+			<td>
+				<p class="hover-description" data-description="<%= @job.description %>"><%= @job.description %></p>
+			</td>
+			<td><%= @job.containers %></td>
+			<td>$<%= @job.cost %></td>
+			<td>#<%= @job.boat_id %></td>
+			<td><a href="/jobs/<%= @job.id %>/edit"> Edit </a></td>
+		</tr>
+	</tbody>
+	</table>
+
+		
+<table class="table">
+	<div class="show-boats">
+		<img src="<%= boat.avatar %>" alt="" width="200">
 					<br>
-					<p id="b_name"><%= boat.name %></p>
+		<p id="b_name"><%= boat.name %></p>
 					<br>
-					<p>Boat Number: <%= boat.id%></p>
+		<p>Boat Number: <%= boat.id%></p>
 					<br>
-					<p><%= boat.loc %></p>
+		<p>Current location: <%= boat.loc %></p>
 					<br>
-					<p><span id="b_con"><%= boat.containers %></span></p>
+		<p>Containers on board: <%= boat.containers %></p>
 					<br>
-				<%= form_for @job do |f| %>
-					<%= f.hidden_field :boat_id, value: boat.id %>
+					
+		<%= form_for @job do |f| %>
+		<%= f.hidden_field :boat_id, value: boat.id %>
+</table>
 					<span id="add_btn">
 						<%= button_to "Add boat", @job, method: :put, remote: true, data: { confirm: "Are you sure?"} %>
 					</span>
 				<% end %>
 				</div>
 		<% end %>
+	</div>
 </div>
 
