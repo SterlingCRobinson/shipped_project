@@ -1,23 +1,23 @@
 body{
-	background-color: #ccc;
+	background-image: url(https://cdn.dribbble.com/users/604891/screenshots/2528680/psg_dr-02.png);
+	background-size: cover;
 }
 
 .nav {
-	background-color: #fff;
+	background-color:rgba(23, 105, 237, 0.9);
 	border: 5px solid black;
+	padding: 10px;
 }
 
-.nav button {
+a {
 	outline: none;
-	background: transparent;
+	background-color: #fff;
 	border: 1px solid black;
-	padding: .5em 1.5em;
-	border-radius: 1.5em;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 5px;
+	padding: 5px 15px;
+	border-radius: 50px;
+	margin: 0 auto;
+	display: inline-block;
+
 }
 
 a:link :visited {
@@ -31,7 +31,7 @@ a {
 
 .wrapper {
 	margin: 0 auto;
-	background-color: white;
+	background-color:rgba(23, 105, 237, 0.9);
 	width: 100%;
 	max-width: 540px;
 	padding: 10px;
@@ -41,7 +41,7 @@ a {
 
 .submitty {
 	outline: none;
-	background: transparent;
+	background: #fff;
 	border: 1px solid black;
 	padding: .5em 1.5em;
 	border-radius: 1.5em;

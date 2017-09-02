@@ -12,13 +12,13 @@
   <body>
   <div class="nav">
   	<div>
-  	<button><%= link_to "Home", "/" %></button>
+  	<%= link_to "Home", "/", :class => "nav-btn" %>
   	<% if current_user %>
-  		<button><%= link_to "My boats", "/boats" %></button>
-  		<button><%= link_to "Log out", destroy_user_session_path, method: :delete %></button>
+  		<%= link_to "My boats", "/boats", :class => "nav-btn" %>
+  		<%= link_to "Log out", destroy_user_session_path, method: :delete, :class => "nav-btn" %>
   	<% else %>
-	  	<button><%= link_to "Log in", new_user_session_path %></button>
-	  	<button><%= link_to "Sign up", new_user_registration_path %></button>
+	  	<%= link_to "Log in", new_user_session_path, :class => "nav-btn" %>
+	  	<%= link_to "Sign up", new_user_registration_path, :class => "nav-btn" %>
 	  <% end %>
 	</div>
   </div>

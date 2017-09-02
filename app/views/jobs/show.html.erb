@@ -47,7 +47,7 @@
 		<%= f.hidden_field :boat_id, value: boat.id %>
 </table>
 					<span id="add_btn">
-						<%= button_to "Add boat", @job, method: :put, remote: true, data: { confirm: "Are you sure?"} %>
+						<%= button_to "Add boat", @job, method: :put, remote: true, data: { confirm: "Are you sure?"}, :class => "submitty" %>
 					</span>
 				<% end %>
 				</div>
