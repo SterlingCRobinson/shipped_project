@@ -13,7 +13,6 @@
 		</tr>
 	</thead>
 	<tbody>
-	<% @boats.each do |boat| %>
 		<tr>
 			<td><%= @job.name %></td>
 			<td><%= @job.origin %></td>
@@ -29,7 +28,7 @@
 	</tbody>
 	</table>
 
-		
+<% @boats.each do |boat| %>
 <table class="table">
 	<div class="show-boats">
 		<img src="<%= boat.avatar %>" alt="" width="200">
@@ -42,16 +41,14 @@
 					<br>
 		<p>Containers on board: <%= boat.containers %></p>
 					<br>
-					
 		<%= form_for @job do |f| %>
 		<%= f.hidden_field :boat_id, value: boat.id %>
-</table>
-					<span id="add_btn">
-						<%= button_to "Add boat", @job, method: :put, remote: true, data: { confirm: "Are you sure?"}, :class => "submitty" %>
-					</span>
-				<% end %>
-				</div>
+			<%= button_to "Add boat", @job, method: :put, remote: true, data: { confirm: "Are you sure?"}, :class => "submitty" %>
 		<% end %>
+		<hr>
+<% end %>
+</table>					
+	</div>
 	</div>
 </div>
 
